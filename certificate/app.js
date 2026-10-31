@@ -218,11 +218,6 @@
     });
   }
 
-  function safeFileName(name) {
-    var base = name.replace(/[^\p{L}\p{M}\p{N}]+/gu, "-").replace(/^-+|-+$/g, "");
-    return "FTS-Mahila-Certificate-" + (base || "Participant") + ".pdf";
-  }
-
   function download(bytes, filename) {
     var blob = new Blob([bytes], { type: "application/pdf" });
     var url = URL.createObjectURL(blob);
@@ -270,7 +265,7 @@
     setBusy(true);
 
     buildPdf(name).then(function (bytes) {
-      download(bytes, safeFileName(name));
+      download(bytes, FtsFilename.fileName(name));
       statusEl.textContent = "Done. Your certificate has been downloaded.";
     }).catch(function (err) {
       if (err && err.code === "UNSUPPORTED") {

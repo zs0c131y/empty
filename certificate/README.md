@@ -15,6 +15,7 @@ Any static host works (GitHub Pages, Netlify, Cloudflare Pages).
 ## Files
 
 - `index.html`, `styles.css`, `app.js` - the site
+- `filename.js` - builds the download name `FTS_Sangam_Certificate_<Name>.pdf` (Hindi names are transliterated to English)
 - `assets/certificate-template.jpg` - the template (2480x1754, from the 300 DPI original)
 - `assets/logo.png`, `assets/fonts/` - branding and self-hosted fonts (Playfair Display, Noto Serif Devanagari, Inter)
 - `vendor/` - pdf-lib, fontkit, regenerator-runtime (needed by fontkit for Devanagari shaping)
