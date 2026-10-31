@@ -58,50 +58,9 @@
   --glow-a: rgba(250, 188, 69, .26);
   --glow-b: rgba(163, 9, 29, .08);
   --shadow: 0 1px 2px rgba(10, 10, 74, .06), 0 12px 32px -12px rgba(92, 18, 32, .25);
-  --logo-bg: transparent;
   --radius: 18px;
   --serif: "Playfair Display", "Noto Serif Devanagari", Georgia, "Times New Roman", serif;
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-}
-
-/* Dark: the certificate's navy as the night sky, ivory text, gold accents */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    color-scheme: dark;
-    --cream: #080826;
-    --paper: #101040;
-    --ink: #fdf6e6;
-    --ink-soft: #b4b3d4;
-    --line: #2b2b6a;
-    --red: #b3122b;
-    --red-deep: #8f0215;
-    --accent: #fabc45;
-    --gold-soft: #4a3a14;
-    --ok: #7fd69a;
-    --error: #ff9aa5;
-    --glow-a: rgba(250, 188, 69, .12);
-    --glow-b: rgba(163, 9, 29, .22);
-    --shadow: 0 1px 2px rgba(0, 0, 0, .5), 0 16px 36px -14px rgba(0, 0, 0, .75);
-    --logo-bg: #fdf6e6;
-  }
-}
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  --cream: #080826;
-  --paper: #101040;
-  --ink: #fdf6e6;
-  --ink-soft: #b4b3d4;
-  --line: #2b2b6a;
-  --red: #b3122b;
-  --red-deep: #8f0215;
-  --accent: #fabc45;
-  --gold-soft: #4a3a14;
-  --ok: #7fd69a;
-  --error: #ff9aa5;
-  --glow-a: rgba(250, 188, 69, .12);
-  --glow-b: rgba(163, 9, 29, .22);
-  --shadow: 0 1px 2px rgba(0, 0, 0, .5), 0 16px 36px -14px rgba(0, 0, 0, .75);
-  --logo-bg: #fdf6e6;
 }
 
 * { box-sizing: border-box; }
@@ -142,7 +101,7 @@ img { max-width: 100%; height: auto; }
 }
 .header-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 0; }
 .brand { display: flex; align-items: center; gap: 12px; color: var(--ink); text-decoration: none; }
-.brand img { width: 64px; height: auto; display: block; background: var(--logo-bg); border-radius: 10px; padding: 3px 5px; margin: -3px -5px; }
+.brand img { width: 64px; height: auto; display: block; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.15; }
 .brand-text strong { font-family: var(--serif); font-size: 1.15rem; letter-spacing: .01em; color: var(--accent); }
 .brand-text span { font-size: .78rem; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-soft); }
@@ -237,7 +196,7 @@ label { display: block; font-weight: 600; font-size: .95rem; margin-bottom: 8px;
 /* Footer */
 .site-footer { margin-top: auto; border-top: 1px solid var(--line); background: var(--paper); }
 .site-footer .wrap { display: flex; align-items: center; gap: 14px; padding: 22px 0; }
-.site-footer img { width: 48px; height: auto; background: var(--logo-bg); border-radius: 8px; padding: 3px 4px; }
+.site-footer img { width: 48px; height: auto; }
 .site-footer p { margin: 0; font-size: .86rem; color: var(--ink-soft); line-height: 1.45; }
 .site-footer strong { color: var(--ink); font-family: var(--serif); }
 
@@ -248,7 +207,7 @@ label { display: block; font-weight: 600; font-size: .95rem; margin-bottom: 8px;
 }
 
 /* Event banner */
-.event-banner { display: block; width: min(100%, 440px); height: auto; margin: 0 0 14px -6px; background: var(--logo-bg); border-radius: 14px; }
+.event-banner { display: block; width: min(100%, 440px); height: auto; margin: 0 0 14px -6px; }
 
 /* Tablet and below: single centred column, never wider than a comfortable reading width */
 @media (max-width: 959px) {
@@ -292,19 +251,3 @@ label { display: block; font-weight: 600; font-size: .95rem; margin-bottom: 8px;
   .brand-text strong { font-size: .94rem; }
 }
 
-/* Theme toggle */
-.theme-toggle {
-  flex: none; width: 44px; height: 44px; display: inline-grid; place-items: center;
-  color: var(--ink); background: transparent; border: 1px solid var(--line); border-radius: 50%;
-  cursor: pointer; transition: background .15s, border-color .15s;
-}
-.theme-toggle:hover { background: var(--gold-soft); border-color: var(--gold); }
-.theme-toggle:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
-.theme-toggle svg { width: 20px; height: 20px; }
-.theme-toggle .i-moon { display: none; }
-:root[data-theme="dark"] .theme-toggle .i-sun { display: none; }
-:root[data-theme="dark"] .theme-toggle .i-moon { display: block; }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .theme-toggle .i-sun { display: none; }
-  :root:not([data-theme="light"]) .theme-toggle .i-moon { display: block; }
-}
