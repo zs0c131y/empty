@@ -23,25 +23,25 @@
         <span>Bangalore</span>
       </span>
     </a>
-    <p class="header-tag">Sanatan Ke Rang</p>
   </div>
 </header>
 
 <main>
   <section class="hero wrap" id="generator" aria-labelledby="title">
     <div class="intro">
+      <img class="event-banner" src="assets/banner.webp" alt="Sanatan Ke Rang" width="1200" height="206" fetchpriority="high">
       <p class="eyebrow">Certificate of Appreciation</p>
       <h1 id="title">Your certificate,<br><em>ready in a moment.</em></h1>
-      <p class="lede">Thank you for being part of <strong>Sanatan Ke Rang</strong>. Type your full name exactly as you would like it to appear, and download your certificate as a print-ready A4 PDF.</p>
+      <p class="lede">Thank you for being part of the event. Type your full name as you would like it printed, and download your certificate as a PDF.</p>
 
       <form id="cert-form" class="card" novalidate autocomplete="off">
         <label for="name">Full name</label>
         <div class="field">
           <input id="name" name="name" type="text" inputmode="text" autocomplete="name"
                  maxlength="60" placeholder="e.g. Priya Sharma" required
-                 aria-describedby="hint error" spellcheck="false" autocapitalize="words">
+                 aria-describedby="hint error" spellcheck="false" autocapitalize="words" enterkeyhint="done">
         </div>
-        <p id="hint" class="hint">As it should be printed. English and Hindi (Devanagari) names are supported.</p>
+        <p id="hint" class="hint">English and Hindi (Devanagari) names are supported.</p>
         <p id="error" class="error" role="alert" hidden></p>
 
         <button id="submit" class="btn" type="submit">
@@ -49,10 +49,6 @@
           <span id="submit-label">Download certificate (PDF)</span>
         </button>
         <p id="status" class="status" role="status" aria-live="polite"></p>
-        <p class="privacy">
-          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M12 3 5 6v5c0 4.5 2.9 8.3 7 10 4.1-1.7 7-5.5 7-10V6l-7-3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-          Your certificate is created on your own device. Your name is never uploaded or stored.
-        </p>
       </form>
     </div>
 
@@ -63,7 +59,6 @@
           <img src="assets/certificate-template.jpg" alt="Sanatan Ke Rang Certificate of Appreciation from FTS Mahila Samiti, Bangalore" width="2480" height="1754" decoding="async">
           <span class="cert-name" id="preview-name" aria-hidden="true"></span>
         </div>
-        <figcaption>Preview only. The downloaded PDF is full resolution (300 DPI).</figcaption>
       </figure>
     </div>
   </section>
