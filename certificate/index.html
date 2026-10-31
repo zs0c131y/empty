@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Certificate Generator | FTS Mahila Samiti, Bangalore</title>
+<meta name="description" content="Get your Sanatan Ke Rang Certificate of Appreciation from FTS Mahila Samiti, Bangalore. Enter your full name and download your certificate as a PDF.">
+<meta name="theme-color" content="#b42d2a">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="preload" href="assets/fonts/playfair-display-latin-600-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/certificate-template.jpg" as="image">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#generator">Skip to the certificate form</a>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="./" aria-label="FTS Mahila Samiti, Bangalore - home">
+      <img src="assets/logo.png" alt="" width="64" height="34">
+      <span class="brand-text">
+        <strong>FTS Mahila Samiti</strong>
+        <span>Bangalore</span>
+      </span>
+    </a>
+    <p class="header-tag">Sanatan Ke Rang</p>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap" id="generator" aria-labelledby="title">
+    <div class="intro">
+      <p class="eyebrow">Certificate of Appreciation</p>
+      <h1 id="title">Your certificate,<br><em>ready in a moment.</em></h1>
+      <p class="lede">Thank you for being part of <strong>Sanatan Ke Rang</strong>. Type your full name exactly as you would like it to appear, and download your certificate as a print-ready A4 PDF.</p>
+
+      <form id="cert-form" class="card" novalidate autocomplete="off">
+        <label for="name">Full name</label>
+        <div class="field">
+          <input id="name" name="name" type="text" inputmode="text" autocomplete="name"
+                 maxlength="60" placeholder="e.g. Priya Sharma" required
+                 aria-describedby="hint error" spellcheck="false" autocapitalize="words">
+        </div>
+        <p id="hint" class="hint">As it should be printed. English and Hindi (Devanagari) names are supported.</p>
+        <p id="error" class="error" role="alert" hidden></p>
+
+        <button id="submit" class="btn" type="submit">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M12 3v11m0 0 4.5-4.5M12 14 7.5 9.5M5 19h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span id="submit-label">Download certificate (PDF)</span>
+        </button>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+        <p class="privacy">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M12 3 5 6v5c0 4.5 2.9 8.3 7 10 4.1-1.7 7-5.5 7-10V6l-7-3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          Your certificate is created on your own device. Your name is never uploaded or stored.
+        </p>
+      </form>
+    </div>
+
+    <div class="preview-col">
+      <p class="preview-label" id="preview-label">Live preview</p>
+      <figure class="preview" aria-labelledby="preview-label">
+        <div class="cert" id="cert-preview">
+          <img src="assets/certificate-template.jpg" alt="Sanatan Ke Rang Certificate of Appreciation from FTS Mahila Samiti, Bangalore" width="2480" height="1754" decoding="async">
+          <span class="cert-name" id="preview-name" aria-hidden="true"></span>
+        </div>
+        <figcaption>Preview only. The downloaded PDF is full resolution (300 DPI).</figcaption>
+      </figure>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <img src="assets/logo.png" alt="" width="48" height="25">
+    <p><strong>FTS Mahila Samiti, Bangalore</strong><br>Thank you for being part of our community.</p>
+  </div>
+</footer>
+
+<script src="vendor/pdf-lib.min.js"></script>
+<script src="vendor/regenerator-runtime.js"></script>
+<script src="vendor/fontkit.umd.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
