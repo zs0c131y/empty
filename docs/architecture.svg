@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460" font-family="Arial, Helvetica, sans-serif" font-size="14">
+  <defs><marker id="a" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#333"/></marker></defs>
+  <rect width="900" height="460" fill="#fff"/>
+  <text x="450" y="30" text-anchor="middle" font-size="18" font-weight="bold">Smart Classroom Energy Management - Block Diagram</text>
+
+  <g stroke="#333" stroke-width="1.5">
+    <rect x="30" y="70" width="190" height="70" rx="6" fill="#e8f1ff"/>
+    <rect x="30" y="185" width="190" height="70" rx="6" fill="#e8f1ff"/>
+    <rect x="30" y="300" width="190" height="70" rx="6" fill="#e8f1ff"/>
+    <rect x="330" y="105" width="240" height="230" rx="8" fill="#fff4d6"/>
+    <rect x="680" y="70" width="190" height="70" rx="6" fill="#e6f7e6"/>
+    <rect x="680" y="185" width="190" height="70" rx="6" fill="#e6f7e6"/>
+    <rect x="680" y="300" width="190" height="70" rx="6" fill="#f0e6f7"/>
+  </g>
+  <g text-anchor="middle">
+    <text x="125" y="100" font-weight="bold">PIR motion sensor</text><text x="125" y="120">OUT -> D2 (digital)</text>
+    <text x="125" y="215" font-weight="bold">DHT temperature sensor</text><text x="125" y="235">SDA -> D3 (1-wire)</text>
+    <text x="125" y="330" font-weight="bold">LDR module</text><text x="125" y="350">AO -> A0 (analog)</text>
+
+    <text x="450" y="135" font-weight="bold" font-size="16">Arduino Uno (ATmega328P)</text>
+    <text x="450" y="170">occupied = motion in last 30 s</text>
+    <text x="450" y="195">light = occupied AND dark</text>
+    <text x="450" y="220">fan: &gt;30 C ON, &lt;27 C OFF,</text>
+    <text x="450" y="240">27-30 C keep previous state</text>
+    <text x="450" y="265">no motion 30 s -&gt; light OFF, fan OFF</text>
+    <text x="450" y="300" font-size="12" fill="#555">loop(): read -&gt; decide -&gt; drive -&gt; report</text>
+
+    <text x="775" y="100" font-weight="bold">Light LED</text><text x="775" y="120">D8 + 220 ohm</text>
+    <text x="775" y="215" font-weight="bold">Fan LED (simulated)</text><text x="775" y="235">D9 + 220 ohm</text>
+    <text x="775" y="330" font-weight="bold">Status interface</text><text x="775" y="350">Serial Monitor, 9600 baud</text>
+  </g>
+  <g stroke="#333" stroke-width="1.8" marker-end="url(#a)" fill="none">
+    <path d="M220,105 L330,150"/><path d="M220,220 L330,220"/><path d="M220,335 L330,290"/>
+    <path d="M570,150 L680,105"/><path d="M570,220 L680,220"/><path d="M570,290 L680,335"/>
+  </g>
+  <text x="450" y="420" text-anchor="middle" fill="#555">Power: 5 V and GND from Uno to PIR, DHT and LDR module. Loads are LEDs only (no mains).</text>
+</svg>
